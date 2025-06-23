@@ -1,0 +1,58 @@
+{
+  "name": "jwt-authentication-node-firebase",
+  "version": "1.0.0",
+  "description": "jwt-auth-api",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node -r tsconfig-paths/register src/server.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node -r tsconfig-paths/register src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedrooFerraz/jwt-authentication-node-firebase.git"
+  },
+  "keywords": [
+    "jwt",
+    "node",
+    "express",
+    "typescript",
+    "sequelize",
+    "mysql",
+    "firebase",
+    "auth"
+  ],
+  "author": "Pedro Ferraz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PedrooFerraz/jwt-authentication-node-firebase/issues"
+  },
+  "homepage": "https://github.com/PedrooFerraz/jwt-authentication-node-firebase#readme",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/csurf": "^1.11.5",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.24",
+    "@types/sequelize": "^4.28.20",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.10",
+    "npm": "^11.4.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie": "^1.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "firebase": "^11.8.1",
+    "firebase-admin": "^13.4.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
