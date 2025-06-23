@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/dbConfig';
-import { userIFC } from '@/interfaces/user/user.interface';
+import { userIFC } from '@/interfaces/user/userIFC';
 
 class User extends Model implements userIFC {
     declare id: number

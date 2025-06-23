@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthService } from "@/services/firebase/auth.service";
+import { AuthService } from "@/services/auth/authService";
 
 const Service = new (AuthService)
 

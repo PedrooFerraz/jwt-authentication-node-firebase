@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/dbConfig';
-import { Permission } from '@/models/user/permissionModel';
 
 class Module extends Model {
     declare id: number

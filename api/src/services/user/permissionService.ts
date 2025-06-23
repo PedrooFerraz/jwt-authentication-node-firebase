@@ -1,5 +1,5 @@
-import { Permission } from "@/models/user/permission.model";
-import { PermissionIFC, PermissionServiceIFC } from "@/interfaces/user/permission.interface";
+import { Permission } from "@/models/user/permissionModel";
+import { PermissionIFC, PermissionServiceIFC } from "@/interfaces/user/permissionIFC";
 
 export class PermissionService  implements PermissionServiceIFC {
 

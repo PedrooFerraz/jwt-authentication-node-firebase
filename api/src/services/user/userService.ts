@@ -1,6 +1,6 @@
 
-import { User } from "@/models/user/user.model";
-import { userServiceIFC, userIFC } from "@/interfaces/user/user.interface";
+import { User } from "@/models/user/userModel";
+import { userServiceIFC, userIFC } from "@/interfaces/user/userIFC";
 
 export class UserService implements userServiceIFC {
 

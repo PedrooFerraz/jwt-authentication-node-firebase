@@ -2,7 +2,7 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/dbConfig';
 import { Module } from '@/models/user/moduleModel';
 import { User } from '@/models/user/userModel';
-import { PermissionIFC } from '@/interfaces/user/permission.interface';
+import { PermissionIFC } from '@/interfaces/user/permissionIFC';
 
 class Permission extends Model implements PermissionIFC {
     declare user_id: number
