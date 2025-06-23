@@ -2,7 +2,7 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/dbConfig';
 import { userIFC } from '@/interfaces/user/userIFC';
 
-class User extends Model implements userIFC {
+class Users extends Model implements userIFC {
     declare id: number
     declare uid: string
     declare name: string
@@ -10,7 +10,7 @@ class User extends Model implements userIFC {
     declare status: number // 0: active, 1: inactive
 }
 
-User.init({
+Users.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -40,9 +40,9 @@ User.init({
 
 }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'Users',
     tableName: 'users',
     timestamps: true,
 })
 
-export { User }
+export { Users }

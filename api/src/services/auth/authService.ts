@@ -1,4 +1,4 @@
-import { AuthServiceIFC } from "@/interfaces/auth/authIfc";
+import { AuthServiceIFC } from "@/interfaces/auth/authIFC";
 import { auth } from "@/config/Firebase/config"
 import { admin } from "@/config/Firebase/admin";
 import { signInWithEmailAndPassword } from "firebase/auth";

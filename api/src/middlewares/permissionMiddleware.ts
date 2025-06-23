@@ -14,7 +14,7 @@ export const permissionMiddleware = async (req: Request, res: Response, next: Ne
     const user = await userService.getUserByUid(Uid);
 
     if (!user) {
-        return res.status(400).json({ error: "User not found!" })
+        return res.status(400).json({ error: "User logged UID not indentified" })
     }
 
     try {

@@ -1,27 +1,27 @@
 
-import { User } from "@/models/user/userModel";
+import { Users } from "@/models/user/userModel";
 import { userServiceIFC, userIFC } from "@/interfaces/user/userIFC";
 
 export class UserService implements userServiceIFC {
 
     async getAllUser(): Promise<userIFC[]> {
-        return User.findAll();
+        return Users.findAll();
     }
 
     async getUserById(id: number): Promise<userIFC | null> {
-        return User.findByPk(id) || null;
+        return Users.findByPk(id) || null;
     }
 
     async getUserByEmail(email: string): Promise<userIFC | null> {
-        return User.findOne({ where: { email } }) || null;
+        return Users.findOne({ where: { email } }) || null;
     }
 
     async getUserByUid(uid: string): Promise<userIFC | null> {
-        return User.findOne({ where: { uid } }) || null;
+        return Users.findOne({ where: { uid } }) || null;
     }
 
     async createUser(userData: Partial<userIFC>): Promise<userIFC> {
-        const newUser = await User.create({
+        const newUser = await Users.create({
             uid: userData.uid || '',
             name: userData.name || '',
             email: userData.email || '',
@@ -30,7 +30,7 @@ export class UserService implements userServiceIFC {
     }
 
     async updateUser(id: number, userData: Partial<userIFC>): Promise<userIFC | null> {
-        const user = await User.findByPk(id);
+        const user = await Users.findByPk(id);
         if (!user) return null;
 
         await user.update(userData);
@@ -38,14 +38,14 @@ export class UserService implements userServiceIFC {
     }
 
     async desactiveUser(id: number): Promise<void> {
-        const user = await User.findByPk(id);
+        const user = await Users.findByPk(id);
         if (user) {
             user.status = 1; // Set status to inactive
             await user.save();
         }
     }
     async reactivateUser(id: number): Promise<void> {
-        const user = await User.findByPk(id);
+        const user = await Users.findByPk(id);
         if (user) {
             user.status = 0; // Set status to active
             await user.save();
