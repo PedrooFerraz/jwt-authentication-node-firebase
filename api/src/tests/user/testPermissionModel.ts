@@ -26,7 +26,7 @@ export async function testPermissionModel() {
     // console.log('Permissão deletada com sucesso.');
 
   } catch (error) {
-    console.error('🚨 Erro ao testar Permission:', error);
+    console.error('Erro ao testar Permission:', error);
   } finally {
     await sequelize.close();
   }
