@@ -1,12 +1,12 @@
 import sequelize from '@/config/dbConfig';
-import { User } from '@/models/user/userModel';
+import { Users } from '@/models/user/userModel';
 
 export async function testUserModel() {
   try {
 
     await sequelize.sync({ alter: true });
 
-    const user = await User.create({
+    const user = await Users.create({
       name: 'Pedro Ferraz',
       uid: '123456789101112131415161718',
       email: 'pedro@phflima.com.br',
@@ -15,7 +15,7 @@ export async function testUserModel() {
     console.log('User criado:', user.toJSON());
 
     // Buscar todos os registros
-    const users = await User.findAll();
+    const users = await Users.findAll();
     console.log('Todos os User:', users.map(u => u.toJSON()));
 
     // Atualizar
