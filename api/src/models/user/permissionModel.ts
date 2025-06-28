@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/dbConfig';
 import { Module } from '@/models/user/moduleModel';
-import { User } from '@/models/user/userModel';
+import { Users } from '@/models/user/userModel';
 import { PermissionIFC } from '@/interfaces/user/permissionIFC';
 
 class Permission extends Model implements PermissionIFC {
@@ -17,7 +17,7 @@ Permission.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: User,
+            model: Users,
             key: "id",
         }
     },

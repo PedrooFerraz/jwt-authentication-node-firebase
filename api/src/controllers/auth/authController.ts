@@ -1,7 +1,9 @@
 import { Request, Response } from "express";
 import { AuthService } from "@/services/auth/authService";
+import { UserController } from "../user/userController";
 
 const Service = new (AuthService)
+const userController = new (UserController)
 
 export class AuthController {
     async SignIn(req: Request, res: Response) {
@@ -32,5 +34,20 @@ export class AuthController {
             res.status(500).json({ error: error.message });
         }
     }
+    async Register(req: Request, res: Response) {
+        const body = await req.body
+
+        try {
+            const data = await Service.register(body.email, body.password)
+            req.uid = data.user.uid
+            req.email = data.user.email ?? undefined
+            await userController.createUser(req, res)
+            res.status(200).json({ "message": "Successful Register" });
+        } catch (error: any) {
+            res.status(500).json({ error: error.message });
+        }
+
+    }
+
 
 }

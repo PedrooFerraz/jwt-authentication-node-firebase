@@ -1,7 +1,7 @@
 import { AuthServiceIFC } from "@/interfaces/auth/authIFC";
 import { auth } from "@/config/Firebase/config"
 import { admin } from "@/config/Firebase/admin";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { serialize } from "cookie";
 import { DecodedIdToken } from "firebase-admin/lib/auth/token-verifier";
 
@@ -25,8 +25,9 @@ export class AuthService implements AuthServiceIFC {
         return admin.auth().revokeRefreshTokens(decodedClaims.sub)
     }
 
-    async register(): Promise<void> {
-
+    async register(email: string, password: string): Promise<UserCredential> {
+        const newUser = await createUserWithEmailAndPassword(auth, email, password)
+        return newUser
     }
 
     async generateToken(idToken: string): Promise<string> {

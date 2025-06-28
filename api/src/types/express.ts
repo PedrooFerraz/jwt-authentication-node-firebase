@@ -5,6 +5,9 @@ declare global {
         interface Request {
             permission?: PermissionIFC[];
             user?: string;
+            uid?: string;
+            email?: string;
+            name?: string;
         }
     }
 }
